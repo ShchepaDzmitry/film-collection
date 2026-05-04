@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, input } from '@angular/core';
+import { IFilm } from '../models/film-model';
 
 @Component({
   selector: 'app-film-card',
@@ -7,5 +8,5 @@ import { Component } from '@angular/core';
   styleUrl: './film-card.scss',
 })
 export class FilmCard {
-
+  film = input.required<IFilm>();
 }

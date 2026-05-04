@@ -1,1 +1,7 @@
-<p>catalog works!</p>
+<input
+  type="text"
+  [ngModel]="searchString()"
+  (ngModelChange)="updateSearch($event)"
+  placeholder="Search films..."
+/>
+<app-film-collection />

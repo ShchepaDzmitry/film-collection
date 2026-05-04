@@ -11,4 +11,8 @@ export const routes: Routes = [
     pathMatch: 'full',
     redirectTo: 'home',
   },
+  {
+    path: '**',
+    loadComponent: () => import('../app/shared/not-found/not-found').then((m) => m.NotFound),
+  },
 ];

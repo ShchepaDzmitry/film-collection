@@ -1,1 +1,7 @@
-<p>film-collection works!</p>
+<div class="films-container">
+  @for(film of films(); track film.id) {
+  <app-film-card [film]="film" />
+  } @empty {
+  <p>Nothing found</p>
+  }
+</div>
