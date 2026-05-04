@@ -1,1 +1,9 @@
-<p>film-details works!</p>
+<div class="film-details__container">
+  <img src="{{ film()?.posterUrl }}" alt="{{ film()?.title }}" />
+  <ul>
+    <li>{{ film()?.year }}</li>
+    <li>{{ film()?.genre }}</li>
+    <li>{{ film()?.duration }}</li>
+  </ul>
+  <p>{{ film()?.description }}</p>
+</div>

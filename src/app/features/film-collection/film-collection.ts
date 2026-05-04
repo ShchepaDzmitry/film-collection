@@ -9,7 +9,7 @@ import { FilmCard } from './film-card/film-card';
   styleUrl: './film-collection.scss',
 })
 export class FilmCollection {
-  filmService = inject(Film);
+  private readonly filmService = inject(Film);
 
   readonly films = this.filmService.filteredFilms;
 }

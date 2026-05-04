@@ -1,1 +1,20 @@
-/* You can add global styles to this file, and also import other style files */
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+  transition-duration: 0.7s;
+  max-width: 1920px;
+  list-style: none;
+}
+
+:root {
+  --navy: #20113d;
+  --black: #000;
+  --white: #fff;
+  --orange: #f58021;
+  --turquoise: #00a092;
+  --gray: #a4a8ae;
+  --error-text: red;
+}

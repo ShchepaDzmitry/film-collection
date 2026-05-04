@@ -10,8 +10,8 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './catalog.scss',
 })
 export class Catalog {
-  filmService = inject(Film);
+  private readonly filmService = inject(Film);
 
-  searchString = this.filmService.searchString;
+  readonly searchString = this.filmService.searchString;
   updateSearch = this.filmService.updateSearch;
 }

@@ -17,11 +17,7 @@ export class Film {
 
     if (!searchString) return this._films();
 
-    const filteredFilms = this._films().filter((film: IFilm) => {
-      return film.title.toLowerCase().includes(searchString);
-    });
-
-    return filteredFilms;
+    return this._films().filter((film: IFilm) => film.title.toLowerCase().includes(searchString));
   });
 
   readonly favoriteFilms = computed(() => this._films().filter((film: IFilm) => film.isFavorite));
@@ -30,7 +26,6 @@ export class Film {
     this._searchString.set(value);
   };
 
-  getFilm(id: string) {
-    return this._films().find((el: IFilm) => el.id.toString() === id);
-  }
+  getFilm = (id: string): IFilm | null =>
+    this._films().find((el) => el.id.toString() === id) ?? null;
 }
