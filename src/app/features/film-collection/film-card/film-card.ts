@@ -16,6 +16,7 @@ export class FilmCard {
   faStar = faStar;
 
   toggleFavorite(event: Event, film: IFilm) {
+    console.log(film);
     this.filmService.toggleFavorite(event, film);
   }
 }

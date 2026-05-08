@@ -29,9 +29,12 @@ export class FilmService {
   getFilm = (id: string): IFilm | null =>
     this._films().find((el) => el.id.toString() === id) ?? null;
 
-  toggleFavorite = (event: Event, currentFilm: IFilm) => {
+  toggleFavorite = (event: Event, film: IFilm) => {
     event.stopPropagation();
-    let { isFavorite } = currentFilm;
-    isFavorite = !isFavorite;
+    const currentFilm = this._films().find((filmDetails) => film.id === filmDetails.id);
+
+    if (currentFilm) {
+      currentFilm.isFavorite = !currentFilm.isFavorite;
+    }
   };
 }
