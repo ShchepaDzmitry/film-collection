@@ -5,7 +5,7 @@ import { IFilm } from './models/film-model';
 @Injectable({
   providedIn: 'root',
 })
-export class Film {
+export class FilmService {
   private readonly _films = signal<IFilm[]>(films);
   private readonly _searchString = signal('');
 

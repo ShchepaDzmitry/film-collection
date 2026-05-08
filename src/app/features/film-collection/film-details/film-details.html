@@ -4,7 +4,7 @@
   <ul>
     <li>{{ film()?.year }}</li>
     <li>{{ film()?.genre }}</li>
-    <li>{{ film()?.duration }}</li>
+    <li>{{ film()?.duration | duration }}</li>
   </ul>
   <p>{{ film()?.description }}</p>
 </div>

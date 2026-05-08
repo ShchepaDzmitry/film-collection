@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { FilmCollection } from '../../../features/film-collection/film-collection';
-import { Film } from '../../../features/film-collection/film';
+import { FilmService } from '../../../features/film-collection/film.service';
 import { FormsModule } from '@angular/forms';
 import { Autofocus } from './autofocus';
 
@@ -11,7 +11,7 @@ import { Autofocus } from './autofocus';
   styleUrl: './catalog.scss',
 })
 export class Catalog {
-  private readonly filmService = inject(Film);
+  private readonly filmService = inject(FilmService);
 
   readonly searchString = this.filmService.searchString;
   updateSearch = this.filmService.updateSearch;

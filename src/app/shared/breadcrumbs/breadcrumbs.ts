@@ -1,7 +1,7 @@
 import { Component, OnInit, computed, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { BreadcrumbsService } from './services/breadcrumbs';
-import { Film } from '../../features/film-collection/film';
+import { BreadcrumbsService } from './services/breadcrumbs.service';
+import { FilmService } from '../../features/film-collection/film.service';
 
 @Component({
   selector: 'app-breadcrumbs',
@@ -11,8 +11,8 @@ import { Film } from '../../features/film-collection/film';
 })
 export class Breadcrumbs {
   breadcrumbsService = inject(BreadcrumbsService);
-  filmService = inject(Film);
-  url = this.breadcrumbsService.url as any;
+  filmService = inject(FilmService);
+  url = this.breadcrumbsService.url;
 
   breadcrumbs = computed(() => {
     return this.url()

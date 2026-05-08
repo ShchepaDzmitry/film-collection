@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { Film } from './film';
+import { FilmService } from './film.service';
 import { FilmCard } from './film-card/film-card';
 
 @Component({
@@ -9,7 +9,7 @@ import { FilmCard } from './film-card/film-card';
   styleUrl: './film-collection.scss',
 })
 export class FilmCollection {
-  private readonly filmService = inject(Film);
+  private readonly filmService = inject(FilmService);
 
   readonly films = this.filmService.filteredFilms;
 }

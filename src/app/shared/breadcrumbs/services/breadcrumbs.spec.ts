@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
-import { Breadcrumbs } from './breadcrumbs';
+import { Breadcrumbs } from './breadcrumbs.service';
 
 describe('Breadcrumbs', () => {
   let service: Breadcrumbs;
