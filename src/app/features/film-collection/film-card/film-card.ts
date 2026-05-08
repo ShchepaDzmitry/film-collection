@@ -1,7 +1,8 @@
-import { Component, input } from '@angular/core';
+import { Component, inject, input } from '@angular/core';
 import { IFilm } from '../models/film-model';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 import { RouterLink } from '@angular/router';
+import { Film } from '../film';
 
 @Component({
   selector: 'app-film-card',
@@ -11,10 +12,10 @@ import { RouterLink } from '@angular/router';
 })
 export class FilmCard {
   film = input.required<IFilm>();
+  filmService = inject(Film);
   faStar = faStar;
 
-  toggleFavorite(event: Event) {
-    event.stopPropagation();
-    this.film().isFavorite = !this.film().isFavorite;
+  toggleFavorite(event: Event, film: IFilm) {
+    this.filmService.toggleFavorite(event, film);
   }
 }

@@ -28,4 +28,10 @@ export class Film {
 
   getFilm = (id: string): IFilm | null =>
     this._films().find((el) => el.id.toString() === id) ?? null;
+
+  toggleFavorite = (event: Event, currentFilm: IFilm) => {
+    event.stopPropagation();
+    let { isFavorite } = currentFilm;
+    isFavorite = !isFavorite;
+  };
 }
